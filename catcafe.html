@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Cat Cafe: treats for your tabby!</title>
+    <link href='catcafe.css' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <script src='http://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="app" ng-controller="catcafeCtrl">
+<header>
+    <div id="head-cat" random-image></div>
+
+    <h1>Welcome to Cat Cafe!</h1>
+</header>
+<section id="cashier">
+    <p id='tagline'>Here we sell the sweetest treats for your feline friend. Come spend time in
+        Cat-topia.</p>
+
+    <form id='cash-calculator' name='cashForm'>
+        <div class='cash-line'>
+            <label>We need</label><input id='amountCharged' ng-model="amountCharged" name='amountCharged' type='text' ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                                         required ng-class="{'error':cashForm.amountCharged.$touched && cashForm.amountCharged.$invalid}">
+
+            <div class="currency-name">Mewla</div>
+            <div class="error-message" ng-show="cashForm.amountCharged.$touched && cashForm.amountCharged.$invalid">Please enter valid amount needed</div>
+
+        </div>
+        <div class='cash-line'>
+            <label>You pay</label><input id='amountTendered' ng-model="amountTendered" name='amountTendered' type='text' ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"
+                                         required ng-class="{'error':cashForm.amountTendered.$touched && cashForm.amountTendered.$invalid}">
+
+            <div class="currency-name">Mewla</div>
+            <div class="error-message" ng-show="cashForm.amountTendered.$touched && cashForm.amountTendered.$invalid">Please enter valid amount tendered</div>
+            <div class="error-message" ng-show="amountNeg">Please enter an amount greater than amount needed</div>
+
+        </div>
+        <button id='calculate' type='submit' ng-disabled="cashForm.amountCharged.$touched && cashForm.amountCharged.$invalid || cashForm.amountTendered.$touched && cashForm.amountTendered.$invalid"
+                ng-click="calculateChange(amountCharged,amountTendered)">Calculate Change
+        </button>
+
+    </form>
+
+    <div id='results' ng-if="calc && !amountNeg">
+        <div class="inner-box" ng-if="!exactChange">
+            <p class="title">Customer Change</p>
+
+            <div class="kpi-box" ng-if="numberHundreds!=0">
+                <p class="value">{{numberHundreds}}</p>
+
+                <p class="head-text">100 mewla</p>
+            </div>
+            <div class="kpi-box" ng-if="numberThirtyThrees!=0">
+                <p class="value">{{numberThirtyThrees}}</p>
+
+                <p class="head-text">33 mewla</p>
+            </div>
+            <div class="kpi-box" ng-if="numberTwentyOnes!=0">
+                <p class="value">{{numberTwentyOnes}}</p>
+
+                <p class="head-text">21 mewla</p>
+            </div>
+            <div class="kpi-box" ng-if="numberSevens!=0">
+                <p class="value">{{numberSevens}}</p>
+
+                <p class="head-text">7 mewla</p>
+            </div>
+            <div class="kpi-box" ng-if="numberThrees!=0">
+                <p class="value">{{numberThrees}}</p>
+
+                <p class="head-text">3 mewla</p>
+            </div>
+            <div class="kpi-box" ng-if="numberOnes!=0">
+                <p class="value">{{numberOnes}}</p>
+
+                <p class="head-text">1 mewla</p>
+            </div>
+        </div>
+        <div class="inner-box" ng-if="exactChange">
+            <div class="title">You paid the exact amount!</div>
+            <div class="fact-text">Here is a cat fact for you:</div>
+            <div class="fortune-text">{{fortune}}</div>
+        </div>
+    </div>
+</section>
+<script src='app.js'></script>
+<script src="randomImage.js"></script>
+<script src='catcafeCtrl.js'></script>
+</body>
+</html>

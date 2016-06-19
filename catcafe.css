@@ -1,0 +1,145 @@
+header {
+    background-color: #E3E5D4;
+}
+
+header h1 {
+    font-weight: 400;
+    margin: 3px;
+    text-align: center;
+}
+
+#head-cat {
+    width: 225px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    height: 240px;
+}
+
+#cash-calculator {
+    width: 400px;
+}
+
+#tagline {
+    width: 300px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#tagline, #cash-calculator {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cash-line {
+    margin: 8px 23px;
+    clear: both;
+}
+
+.cash-line label {
+    text-align: right;
+    float: left;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.cash-line .currency-name {
+    float: right;
+    font-size: 13px;
+    padding-top: 6px;
+
+}
+
+.cash-line input {
+    border-radius: 5px;
+    border: 1px solid rgb(212, 212, 212);
+    padding: 10px 5px;
+}
+
+input.error {
+   border:1px solid red;
+}
+
+.error-message {
+    color: red;
+    float: left;
+    margin-left: 76px;
+    margin-bottom: 15px;
+    font-size: 13px;
+
+}
+
+button#calculate {
+    color: white;
+    background-color: rgb(0, 129, 176);
+    border-radius: 5px;
+    border: none;
+    font-size: 13px;
+    height: 32px;
+    margin-left: 23px;
+}
+
+button#calculate:hover {
+    cursor: pointer;
+    background-color: rgb(0, 109, 156);
+}
+
+.cash-line input, button#calculate {
+    width: 230px;
+}
+
+#results {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#results .inner-box {
+    text-align: center;
+    background-color: #EFF9FC;
+    padding-bottom: 20px;
+}
+
+#results .title {
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+#results .head-text {
+    font-weight: bold;
+    font-size: 13px;
+    color: gray;
+
+}
+
+#results .value {
+    font-size: 21px;
+    text-align: center;
+    color: #000;
+}
+
+#results .kpi-box {
+    margin-right: 2px;
+    margin-left: 2px;
+    display: inline-block;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#results .fact-text {
+    font-size: 15px;
+    margin-top: 40px;
+    color: #CFD7DA;
+}
+
+#results .fortune-text {
+    color: #848A8B;
+    margin-top: 5px;
+    font-size: 18px;
+}
