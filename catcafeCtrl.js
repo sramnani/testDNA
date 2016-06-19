@@ -10,16 +10,24 @@ app.controller('catcafeCtrl', function ($scope, $http) {
             switch (key) {
                 case "1":
                     $scope.numberOnes = changeOwned[key];
+                    break;
                 case "3":
                     $scope.numberThrees = changeOwned[key];
+                    break;
                 case "7":
                     $scope.numberSevens = changeOwned[key];
+                    break;
                 case "21":
                     $scope.numberTwentyOnes = changeOwned[key];
+                    break;
                 case "33":
                     $scope.numberThirtyThrees = changeOwned[key];
+                    break;
                 case "100":
                     $scope.numberHundreds = changeOwned[key];
+                    break;
+                default:
+                    console.log("Key is missing");
             }
 
         }
